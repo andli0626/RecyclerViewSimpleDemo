@@ -13,14 +13,14 @@ import java.util.ArrayList;
 /**
  * Created by wangkegang on 2016/07/06 .
  */
-public class MDStaggeredRvAdapter extends RecyclerView.Adapter<MDStaggeredRvAdapter.ViewHolder> {
+public class StaggeredAdapter extends RecyclerView.Adapter<StaggeredAdapter.ViewHolder> {
 
     /**
      * 展示数据
      */
     private ArrayList<String> mData;
 
-    public MDStaggeredRvAdapter(ArrayList<String> data) {
+    public StaggeredAdapter(ArrayList<String> data) {
         this.mData = data;
     }
 
@@ -36,7 +36,7 @@ public class MDStaggeredRvAdapter extends RecyclerView.Adapter<MDStaggeredRvAdap
     }
 
     @Override
-    public MDStaggeredRvAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public StaggeredAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         // 实例化展示的view
         View v;
         if(viewType == 1) {
@@ -50,7 +50,7 @@ public class MDStaggeredRvAdapter extends RecyclerView.Adapter<MDStaggeredRvAdap
     }
 
     @Override
-    public void onBindViewHolder(MDStaggeredRvAdapter.ViewHolder holder, int position) {
+    public void onBindViewHolder(StaggeredAdapter.ViewHolder holder, int position) {
         // 绑定数据
         holder.mTv.setText(mData.get(position));
     }

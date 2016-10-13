@@ -13,7 +13,7 @@ import android.view.View;
 /**
  * Created by wangkegang on 2016/07/06 .
  */
-public class MDGridRvDividerDecoration extends RecyclerView.ItemDecoration {
+public class GridDividerDecoration extends RecyclerView.ItemDecoration {
 
     private static final int[] ATTRS = new int[]{
             android.R.attr.listDivider
@@ -24,7 +24,7 @@ public class MDGridRvDividerDecoration extends RecyclerView.ItemDecoration {
      */
     private Drawable mDivider;
 
-    public MDGridRvDividerDecoration(Context context) {
+    public GridDividerDecoration(Context context) {
         // 获取默认主题的属性
         final TypedArray a = context.obtainStyledAttributes(ATTRS);
         mDivider = a.getDrawable(0);

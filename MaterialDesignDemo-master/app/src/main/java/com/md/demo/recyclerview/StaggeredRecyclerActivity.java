@@ -2,42 +2,40 @@ package com.md.demo.recyclerview;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.OrientationHelper;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.StaggeredGridLayoutManager;
 
 import com.md.demo.R;
-import com.md.demo.recyclerview.adapter.MDRvAdapter;
-import com.md.demo.recyclerview.decoration.MDGridRvDividerDecoration;
+import com.md.demo.recyclerview.adapter.StaggeredAdapter;
 import com.md.demo.recyclerview.mock.MDMockData;
 
 /**
- * grid {@link RecyclerView} page
+ * staggered {@link android.support.v7.widget.RecyclerView} page
  *
- * Created by wangkegang on 2016/07/05 .
+ * Created by wangkegang on 2016/07/06 .
  */
-public class MDGridRvActivity extends Activity {
+public class StaggeredRecyclerActivity extends Activity {
 
     private RecyclerView mRecyclerView;
 
-    private RecyclerView.Adapter mAdapter;
+    private StaggeredAdapter mAdapter;
 
     private RecyclerView.LayoutManager mLayoutManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_rv_grid);
+        setContentView(R.layout.activity_recycler_staggered);
 
         initData();
         initView();
     }
 
     private void initData() {
-        // 竖直方向的网格样式，每行四个Item
-        mLayoutManager = new GridLayoutManager(this, 4, OrientationHelper.VERTICAL, false);
+        mAdapter = new StaggeredAdapter(MDMockData.getRvData());
 
-        mAdapter = new MDRvAdapter(MDMockData.getRvData());
+        mLayoutManager = new StaggeredGridLayoutManager(3, OrientationHelper.VERTICAL);
     }
 
     private void initView() {
@@ -46,8 +44,6 @@ public class MDGridRvActivity extends Activity {
         mRecyclerView.setLayoutManager(mLayoutManager);
 
         mRecyclerView.setAdapter(mAdapter);
-
-        mRecyclerView.addItemDecoration(new MDGridRvDividerDecoration(this));
 
     }
 }

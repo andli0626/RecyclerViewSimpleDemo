@@ -1,15 +1,12 @@
 <resources>
-    <string name="app_name">MaterialDesignDemo</string>
+    <string name="app_name">RecyclerView</string>
 
     <string name="md_to_rv_page">RecyclerView Demo</string>
 
-    <string name="md_del_item">删除item</string>
+    <string name="md_del_item">删除 item</string>
+    <string name="md_add_item">添加 item</string>
 
-    <string name="md_add_item">添加item</string>
-
-    <string name="md_linear_rv">线性RecyclerView</string>
-
-    <string name="md_grid_rv">网格RecyclerView</string>
-
-    <string name="md_staggered_rv">瀑布RecyclerView</string>
+    <string name="md_linear_rv">线性 RecyclerView</string>
+    <string name="md_grid_rv">网格 RecyclerView</string>
+    <string name="md_staggered_rv">瀑布 RecyclerView</string>
 </resources>

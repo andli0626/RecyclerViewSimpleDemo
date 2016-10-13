@@ -2,40 +2,42 @@ package com.md.demo.recyclerview;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.OrientationHelper;
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.StaggeredGridLayoutManager;
 
 import com.md.demo.R;
-import com.md.demo.recyclerview.adapter.MDStaggeredRvAdapter;
+import com.md.demo.recyclerview.adapter.RecyclerAdapter;
+import com.md.demo.recyclerview.decoration.GridDividerDecoration;
 import com.md.demo.recyclerview.mock.MDMockData;
 
 /**
- * staggered {@link android.support.v7.widget.RecyclerView} page
+ * grid {@link RecyclerView} page
  *
- * Created by wangkegang on 2016/07/06 .
+ * Created by wangkegang on 2016/07/05 .
  */
-public class MDStaggeredRvActivity extends Activity {
+public class GridRecyclerActivity extends Activity {
 
     private RecyclerView mRecyclerView;
 
-    private MDStaggeredRvAdapter mAdapter;
+    private RecyclerView.Adapter mAdapter;
 
     private RecyclerView.LayoutManager mLayoutManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_rv_staggered);
+        setContentView(R.layout.activity_recycler_grid);
 
         initData();
         initView();
     }
 
     private void initData() {
-        mAdapter = new MDStaggeredRvAdapter(MDMockData.getRvData());
+        // 竖直方向的网格样式，每行四个Item
+        mLayoutManager = new GridLayoutManager(this, 4, OrientationHelper.VERTICAL, false);
 
-        mLayoutManager = new StaggeredGridLayoutManager(3, OrientationHelper.VERTICAL);
+        mAdapter = new RecyclerAdapter(MDMockData.getRvData());
     }
 
     private void initView() {
@@ -44,6 +46,8 @@ public class MDStaggeredRvActivity extends Activity {
         mRecyclerView.setLayoutManager(mLayoutManager);
 
         mRecyclerView.setAdapter(mAdapter);
+
+        mRecyclerView.addItemDecoration(new GridDividerDecoration(this));
 
     }
 }

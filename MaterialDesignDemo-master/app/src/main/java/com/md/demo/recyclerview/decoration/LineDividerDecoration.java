@@ -11,28 +11,27 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
 /**
- * This implementation of {@link RecyclerView.ItemDecoration}, provides custom divider between items
- *
- * Created by wangkegang on 2016/07/01 .
- */
-public class MDLinearRvDividerDecoration extends RecyclerView.ItemDecoration {
+ * author andli
+ * create at 16/10/13 下午6:32
+ * 设置Item之间间隔样式
+ **/
+
+public class LineDividerDecoration extends RecyclerView.ItemDecoration {
 
     private static final int[] ATTRS = new int[]{
             android.R.attr.listDivider
     };
     public static final int HORIZONTAL_LIST = LinearLayoutManager.HORIZONTAL;
     public static final int VERTICAL_LIST = LinearLayoutManager.VERTICAL;
-    /**
-     * 用于绘制间隔样式
-     */
+
+    /** 用于绘制间隔样式 */
     private Drawable mDivider;
-    /**
-     * 列表的方向，水平/竖直
-     */
+
+    /** 列表的方向，水平/竖直 */
     private int mOrientation;
 
 
-    public MDLinearRvDividerDecoration(Context context, int orientation) {
+    public LineDividerDecoration(Context context, int orientation) {
         // 获取默认主题的属性
         final TypedArray a = context.obtainStyledAttributes(ATTRS);
         mDivider = a.getDrawable(0);
@@ -66,9 +65,7 @@ public class MDLinearRvDividerDecoration extends RecyclerView.ItemDecoration {
         mOrientation = orientation;
     }
 
-    /**
-     * 绘制间隔
-     */
+    /** 绘制间隔 */
     private void drawVertical(Canvas c, RecyclerView parent) {
         final int left = parent.getPaddingLeft();
         final int right = parent.getWidth() - parent.getPaddingRight();
@@ -86,9 +83,7 @@ public class MDLinearRvDividerDecoration extends RecyclerView.ItemDecoration {
         }
     }
 
-    /**
-     * 绘制间隔
-     */
+    /** 绘制间隔 */
     private void drawHorizontal(Canvas c, RecyclerView parent) {
         final int top = parent.getPaddingTop();
         final int bottom = parent.getHeight() - parent.getPaddingBottom();
