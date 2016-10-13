@@ -60,7 +60,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
         // 实例化展示的view
-        View v                  = LayoutInflater.from(parent.getContext()).inflate(R.layout.view_rv_item, parent, false);
+        View v                  = LayoutInflater.from(parent.getContext()).inflate(R.layout.view_recycler_item, parent, false);
         // 实例化viewholder
         ViewHolder viewHolder   = new ViewHolder(v);
 
