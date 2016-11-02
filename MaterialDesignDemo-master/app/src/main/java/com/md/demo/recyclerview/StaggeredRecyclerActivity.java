@@ -2,6 +2,7 @@ package com.md.demo.recyclerview;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.OrientationHelper;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
@@ -15,7 +16,7 @@ import com.md.demo.recyclerview.mock.MDMockData;
  *
  * Created by wangkegang on 2016/07/06 .
  */
-public class StaggeredRecyclerActivity extends Activity {
+public class StaggeredRecyclerActivity extends AppCompatActivity {
 
     private RecyclerView mRecyclerView;
 

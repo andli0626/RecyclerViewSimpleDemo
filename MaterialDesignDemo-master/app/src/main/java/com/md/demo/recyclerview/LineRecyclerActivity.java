@@ -2,6 +2,7 @@ package com.md.demo.recyclerview;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -21,7 +22,7 @@ import java.util.ArrayList;
  * 线性
  **/
 
-public class LineRecyclerActivity extends Activity{
+public class LineRecyclerActivity extends AppCompatActivity {
 
     private Button  mAddItemBtn;
     private Button  mDelItemBtn;

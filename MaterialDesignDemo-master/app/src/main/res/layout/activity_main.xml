@@ -9,19 +9,22 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/md_common_btn_height"
         android:gravity="center"
-        android:text="@string/md_linear_rv"/>
+        android:text="@string/md_linear_rv"
+        android:textAllCaps="false"/>
 
     <Button
         android:id="@+id/to_grid_rv_page_btn"
         android:layout_width="match_parent"
         android:layout_height="@dimen/md_common_btn_height"
         android:gravity="center"
-        android:text="@string/md_grid_rv"/>
+        android:text="@string/md_grid_rv"
+        android:textAllCaps="false"/>
 
     <Button
         android:id="@+id/to_staggered_rv_page_btn"
         android:layout_width="match_parent"
         android:layout_height="@dimen/md_common_btn_height"
         android:gravity="center"
-        android:text="@string/md_staggered_rv"/>
+        android:text="@string/md_staggered_rv"
+        android:textAllCaps="false"/>
 </LinearLayout>
